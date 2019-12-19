@@ -45,6 +45,8 @@ _example:_
 | `username` | String | Yes      | Must exist in database |
 | `password` | String | Yes      | Must exist in database |
 
+_example:_
+
 ```
 {
   username: "test@testing.com",
