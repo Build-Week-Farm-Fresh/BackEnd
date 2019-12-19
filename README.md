@@ -4,13 +4,9 @@
 
 ### Register
 
-**Registers a new user**
+**[POST]** `/api/auth/register`
 
-_Method Url:_ `/api/auth/register`
-
-_HTTP method:_ **[POST]**
-
-##### Request Body
+#### Request
 
 ```
 {
@@ -21,9 +17,9 @@ _HTTP method:_ **[POST]**
 }
 ```
 
-##### Responses
+#### Responses
 
-###### 200 (OK)
+##### 200 (OK)
 
 ```
 {
