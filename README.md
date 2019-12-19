@@ -1,56 +1,60 @@
-# Farm Fresh Produce API Endpoints
+# Farm Fresh Produce API
 
 ## Authentication
 
 ### Register
 
-**Registers a new user**
+**[POST]** `/api/auth/register`
 
-_Method Url:_ `/api/auth/register`
+#### REQUEST
 
-_HTTP method:_ **[POST]**
+| name       | type   | required | description           |
+| ---------- | ------ | -------- | --------------------- |
+| `username` | String | Yes      | Must be unique        |
+| `password` | String | Yes      |                       |
+| `type`     | String | Yes      | "farmer" or "consumer |
 
-##### Request Body
+_example:_
 
 ```
 {
-  username: "test@testing.com",       // required, string
-  password: "test",                   // required, string
-  farmer: true,                       // boolean
-  consumer: false                     // boolean
+  username: "test@testing.com",
+  password: "password",
+  type: "farmer"
 }
 ```
 
-##### Responses
+#### RESPONSE
 
-###### 200 (OK)
+##### 200 (OK)
 
 ```
 {
-  message: "User created successfully. Please log in."
+  message: "User registration successful."
 }
 ```
 
 ### Login
 
-**Logs in an existing user**
+**[POST]** `/api/auth/login`
 
-_Method Url:_ `/api/auth/login`
+#### REQUEST
 
-_HTTP method:_ **[POST]**
-
-##### Request Body
+| name       | type   | required | description            |
+| ---------- | ------ | -------- | ---------------------- |
+| `username` | String | Yes      | Must exist in database |
+| `password` | String | Yes      | Must exist in database |
 
 ```
 {
-  username: "test@testing.com",       // required, string
-  password: "test"                    // required, string
+  username: "test@testing.com",
+  password: "password"
 }
 ```
 
-##### Responses
+#### RESPONSE
 
-###### 200 (OK)
+##### 200 (OK)
 
 ```
 {
