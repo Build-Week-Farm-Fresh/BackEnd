@@ -71,7 +71,8 @@ _example:_
     {
     name: "",
     farmer_id: "", // Store user_id in context
-    location: ""
+    location: "",
+    image: ""
     }
   - GET (all, individual item?)
   - PUT e.g.:
