@@ -1,5 +1,9 @@
 # Farm Fresh Produce API
 
+Base URL:
+
+https://farm-fresh-backend.herokuapp.com/
+
 ## Authentication
 
 ### Register
@@ -8,11 +12,11 @@
 
 #### REQUEST
 
-| name       | type   | required | description           |
-| ---------- | ------ | -------- | --------------------- |
-| `username` | String | Yes      | Must be unique        |
-| `password` | String | Yes      |                       |
-| `type`     | String | Yes      | "farmer" or "consumer |
+| name       | type   | required | description            |
+| ---------- | ------ | -------- | ---------------------- |
+| `username` | String | Yes      | Must be unique         |
+| `password` | String | Yes      |                        |
+| `type`     | String | Yes      | "farmer" or "consumer" |
 
 _example:_
 
