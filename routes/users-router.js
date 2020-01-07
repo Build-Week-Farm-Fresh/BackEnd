@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Users = require("../models/users-model.js");
+const validateUserData = require("../models/validate-user-data.js");
 
-router.put("/", (req, res, next) => {
+router.put("/", validateUserData, (req, res, next) => {
   Users.update(req.decodedToken.subject, req.body)
     .then(user => {
       res.status(200).json(user);
