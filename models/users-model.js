@@ -11,9 +11,9 @@ const getById = id => {
     .first();
 };
 
-const getByEmail = email => {
+const getByUsername = username => {
   return db("users")
-    .where({ email })
+    .where({ username })
     .first();
 };
 
@@ -40,7 +40,7 @@ const remove = id => {
 module.exports = {
   get,
   getById,
-  getByEmail,
+  getByUsername,
   insert,
   update,
   remove

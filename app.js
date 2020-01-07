@@ -1,11 +1,11 @@
-var createError = require("http-errors");
+const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 const indexRouter = require("./routes/index.js");
-const usersRouter = require("./routes/user-router.js");
+const usersRouter = require("./routes/users-router.js");
 const authRouter = require("./routes/auth-router.js");
 const restricted = require("./middleware/restricted.js");
 

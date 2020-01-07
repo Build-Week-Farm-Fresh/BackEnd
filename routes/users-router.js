@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Users = require("../models/user-model.js");
+const Users = require("../models/users-model.js");
 
 router.put("/", (req, res, next) => {
   Users.update(req.decodedToken.subject, req.body)
@@ -21,3 +21,5 @@ router.delete("/:id", (req, res, next) => {
       next(err);
     });
 });
+
+module.exports = router;
