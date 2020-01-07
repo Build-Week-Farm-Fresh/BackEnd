@@ -1,5 +1,9 @@
 # Farm Fresh Produce API
 
+Base URL:
+
+https://farm-fresh-backend.herokuapp.com/
+
 ## Authentication
 
 ### Register
@@ -8,11 +12,11 @@
 
 #### REQUEST
 
-| name       | type   | required | description           |
-| ---------- | ------ | -------- | --------------------- |
-| `username` | String | Yes      | Must be unique        |
-| `password` | String | Yes      |                       |
-| `type`     | String | Yes      | "farmer" or "consumer |
+| name       | type   | required | description            |
+| ---------- | ------ | -------- | ---------------------- |
+| `username` | String | Yes      | Must be unique         |
+| `password` | String | Yes      |                        |
+| `type`     | String | Yes      | "farmer" or "consumer" |
 
 _example:_
 
@@ -45,6 +49,8 @@ _example:_
 | `username` | String | Yes      | Must exist in database |
 | `password` | String | Yes      | Must exist in database |
 
+_example:_
+
 ```
 {
   username: "test@testing.com",
@@ -71,7 +77,8 @@ _example:_
     {
     name: "",
     farmer_id: "", // Store user_id in context
-    location: ""
+    location: "",
+    image: ""
     }
   - GET (all, individual item?)
   - PUT e.g.:
