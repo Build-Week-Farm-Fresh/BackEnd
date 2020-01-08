@@ -13,7 +13,7 @@ router.post("/register", (req, res, next) => {
       .then(user => {
         res
           .status(200)
-          .json({ message: "Registration successful", id: user.id });
+          .json({ message: "User registration successful.", id: user.id });
       })
       .catch(err => {
         next(err);
