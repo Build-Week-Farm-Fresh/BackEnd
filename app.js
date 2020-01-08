@@ -8,6 +8,7 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index.js");
 const usersRouter = require("./routes/users-router.js");
 const authRouter = require("./routes/auth-router.js");
+const produceRouter = require("./routes/produce-router.js");
 const restricted = require("./middleware/restricted.js");
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/users", restricted, usersRouter);
+app.use("/api/produce", produceRouter); // needs to be restricted
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

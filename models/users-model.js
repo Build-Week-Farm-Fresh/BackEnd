@@ -1,5 +1,4 @@
 const db = require("../data/dbConfig.js");
-const bcrypt = require("bcryptjs");
 
 const get = () => {
   return db("users");
