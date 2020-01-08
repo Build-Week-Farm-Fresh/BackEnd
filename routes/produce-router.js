@@ -22,8 +22,8 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.put("/", (req, res, next) => {
-  Produce.update(req.body.id, req.body) // body needs to include produce id as well as all fields
+router.put("/:id", (req, res, next) => {
+  Produce.update(req.params.id, req.body) // body needs to include produce id as well as all fields
     .then(updated => {
       res.status(200).json(updated);
     })
