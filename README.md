@@ -70,6 +70,94 @@ _example:_
 }
 ```
 
+## Produce
+
+### Get Produce
+
+**[GET]** `/api/produce`
+
+#### REQUEST
+
+| name | type    | required | description            |
+| ---- | ------- | -------- | ---------------------- |
+| `id` | Integer | Yes      | ID of logged in farmer |
+
+_example:_
+
+```
+{
+  id: 1
+}
+```
+
+#### RESPONSE
+
+##### 200 (OK)
+
+```
+[
+  {
+    id: 1,
+    name: "Apple",
+    price: 1.99,
+    quantity: 1,
+    farmer_id: 1
+  },
+  {
+    id: 2,
+    name: "Banana",
+    price: 1.89,
+    quantity: 3,
+    farmer_id: 1
+  },
+  {
+    id: 3,
+    name: "Broccoli",
+    price: 0.99,
+    quantity: 1,
+    farmer_id: 1
+  }
+]
+```
+
+### Add Produce
+
+**[POST]** `/api/produce`
+
+#### REQUEST
+
+| name        | type    | required | description            |
+| ----------- | ------- | -------- | ---------------------- |
+| `farmer_id` | String  | Yes      | ID of logged in farmer |
+| `name`      | String  | Yes      | Must be unique         |
+| `price`     | Decimal | Yes      |                        |
+| `quantity`  | Integer | Yes      |                        |
+
+_example:_
+
+```
+{
+  farmer_id: 1,
+  name: "Apple",
+  price: 1.99,
+  quantity: 1
+}
+```
+
+#### RESPONSE
+
+##### 200 (OK)
+
+```
+{
+  id: 1,
+  name: "Apple",
+  price: 1.99,
+  quantity: 1,
+  farmer_id: 1,
+}
+```
+
 <!-- ## Farmer
 
 - CRUD produce from my inventory
