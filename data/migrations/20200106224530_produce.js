@@ -5,7 +5,7 @@ exports.up = function(knex) {
       .text("name")
       .unique()
       .notNullable();
-    tbl.integer("price").notNullable();
+    tbl.decimal("price").notNullable();
     tbl.integer("quantity").notNullable();
     tbl
       .integer("farmer_id")
