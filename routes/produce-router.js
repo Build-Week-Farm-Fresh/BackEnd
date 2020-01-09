@@ -12,8 +12,18 @@ router.post("/", (req, res, next) => {
     });
 });
 
-router.get("/", (req, res, next) => {
-  Produce.getByFarmer(req.body.id) // react needs to pass the farmer ID in to the req body
+router.get("/user/:id", (req, res, next) => {
+  Produce.getByFarmer(req.params.id) // react needs to pass the farmer ID in to the params
+    .then(produce => {
+      res.status(200).json(produce);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
+router.get("/:id", (req, res, next) => {
+  Produce.getById(req.params.id) // react needs to pass the produce ID in to the params
     .then(produce => {
       res.status(200).json(produce);
     })
