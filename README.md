@@ -74,7 +74,7 @@ _example:_
 
 ### Get Produce
 
-**[GET]** `/api/produce`
+**[GET]** `/api/produce/:id`
 
 #### REQUEST
 

@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/users", restricted, usersRouter);
-app.use("/api/produce", produceRouter); // needs to be restricted
+app.use("/api/produce", restricted, produceRouter); // needs to be restricted
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
