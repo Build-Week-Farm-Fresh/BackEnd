@@ -12,6 +12,8 @@ https://farm-fresh-backend.herokuapp.com/
 
 #### REQUEST
 
+##### Body
+
 | name       | type   | required | description            |
 | ---------- | ------ | -------- | ---------------------- |
 | `username` | String | Yes      | Must be unique         |
@@ -22,7 +24,7 @@ _example:_
 
 ```
 {
-  username: "test@testing.com",
+  username: "test@test.com",
   password: "password",
   type: "farmer"
 }
@@ -43,6 +45,8 @@ _example:_
 **[POST]** `/api/auth/login`
 
 #### REQUEST
+
+##### Body
 
 | name       | type   | required | description            |
 | ---------- | ------ | -------- | ---------------------- |
@@ -72,23 +76,17 @@ _example:_
 
 ## Produce
 
-### Get Produce
+### Get all produce for user
 
-**[GET]** `/api/produce/:id`
+**[GET]** `/api/produce/user/:id`
 
 #### REQUEST
+
+##### URL Parameters
 
 | name | type    | required | description            |
 | ---- | ------- | -------- | ---------------------- |
 | `id` | Integer | Yes      | ID of logged in farmer |
-
-_example:_
-
-```
-{
-  id: 1
-}
-```
 
 #### RESPONSE
 
@@ -120,11 +118,39 @@ _example:_
 ]
 ```
 
+### Get individual produce item
+
+**[GET]** `/api/produce/:id`
+
+#### REQUEST
+
+##### URL Parameters
+
+| name | type    | required | description        |
+| ---- | ------- | -------- | ------------------ |
+| `id` | Integer | Yes      | ID of produce item |
+
+#### RESPONSE
+
+##### 200 (OK)
+
+```
+{
+  id: 1,
+  name: "Apple",
+  price: 1.99,
+  quantity: 1,
+  farmer_id: 1
+}
+```
+
 ### Add Produce
 
 **[POST]** `/api/produce`
 
 #### REQUEST
+
+##### Body
 
 | name        | type    | required | description            |
 | ----------- | ------- | -------- | ---------------------- |
@@ -157,41 +183,3 @@ _example:_
   farmer_id: 1,
 }
 ```
-
-<!-- ## Farmer
-
-- CRUD produce from my inventory
-  - POST e.g.:
-    {
-    name: "",
-    farmer_id: "", // Store user_id in context
-    location: "",
-    image: ""
-    }
-  - GET (all, individual item?)
-  - PUT e.g.:
-    {
-    id: "",
-    name: "",
-    farmer_id: "",
-    location: ""
-    }
-  - DELETE (grab produce_id from route)
-- view orders for my produce
-  - GET
-
-## Consumer Endpoints
-
-- view produce local to me
-  - GET (all produce)
-- add produce to shopping cart
-  - Context API
-- place an order
-  - POST e.g.:
-    {
-    items: [
-    { name: "Apple", farmer_id: "1" },
-    { name: "Carrot", farmer_id: "1" }
-    ],
-    consumer_id: 2
-    } -->
