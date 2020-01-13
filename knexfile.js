@@ -15,7 +15,6 @@ module.exports = {
     useNullAsDefault: true
   },
 
-  // not currently in use
   test: {
     client: "sqlite3",
     connection: {
