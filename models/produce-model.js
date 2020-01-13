@@ -1,15 +1,5 @@
 const db = require("../data/dbConfig.js");
 
-// id
-// name
-// price
-// quantity
-
-// const get = () => {
-//   return db("produce");
-// };
-
-// Get produce for logged in farmer
 const getByFarmer = farmer_id => {
   return db("produce").where({ farmer_id: farmer_id });
 };
@@ -24,7 +14,7 @@ const insert = newProduce => {
   return db("produce")
     .insert(newProduce, "id")
     .then(id => {
-      return getById(id[0]); // returns id of newly created produce
+      return getById(id[0]);
     });
 };
 

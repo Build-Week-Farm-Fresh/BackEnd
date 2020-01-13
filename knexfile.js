@@ -16,20 +16,18 @@ module.exports = {
   },
 
   // not currently in use
-  staging: {
-    client: "postgresql",
+  test: {
+    client: "sqlite3",
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
-    },
-    pool: {
-      min: 2,
-      max: 10
+      filename: "./data/test.db"
     },
     migrations: {
-      tableName: "knex_migrations"
-    }
+      directory: "./data/migrations"
+    },
+    seeds: {
+      directory: "./data/seeds"
+    },
+    useNullAsDefault: true
   },
 
   production: {
